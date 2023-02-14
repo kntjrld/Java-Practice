@@ -14,7 +14,7 @@ public class main extends JFrame{
     private JLabel lbl_username;
     private JLabel lbl_password;
     private JPanel BtnPanel;
-    private JButton BtnForgot;
+    private JButton BtnRegister;
     private JLabel LeftLabel2;
     private JLabel LeftLabel3;
     private JPanel LeftPanel2;
