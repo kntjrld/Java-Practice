@@ -3,15 +3,86 @@
   <grid id="27dc6" binding="MainJPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="800" height="541"/>
+      <xy x="20" y="20" width="1750" height="900"/>
     </constraints>
     <properties>
       <background color="-1"/>
-      <maximumSize width="800" height="500"/>
-      <minimumSize width="800" height="500"/>
-      <preferredSize width="800" height="500"/>
+      <maximumSize width="1750" height="800"/>
+      <minimumSize width="1750" height="800"/>
+      <preferredSize width="1750" height="800"/>
     </properties>
     <border type="none"/>
-    <children/>
+    <children>
+      <toolbar id="5ed16">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="50"/>
+            <maximum-size width="-1" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-13077821"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7632c" class="javax.swing.JButton" binding="BtnDashboard">
+            <constraints/>
+            <properties>
+              <font name="Arial" size="14" style="0"/>
+              <horizontalAlignment value="0"/>
+              <icon value="media/graph_24px.png"/>
+              <requestFocusEnabled value="true"/>
+              <text value="Dashboard"/>
+              <verticalAlignment value="0"/>
+            </properties>
+          </component>
+          <component id="384a" class="javax.swing.JButton" binding="recordsButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Arial" size="14" style="0"/>
+              <icon value="media/moleskine_24px.png"/>
+              <text value="Records"/>
+            </properties>
+          </component>
+          <component id="76f33" class="javax.swing.JButton" binding="reportsButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Arial" size="14" style="0"/>
+              <icon value="media/graph_report_24px.png"/>
+              <text value="Reports"/>
+            </properties>
+          </component>
+          <component id="cb8e6" class="javax.swing.JButton" binding="settingsButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Arial" size="14" style="0"/>
+              <icon value="media/settings_24px.png"/>
+              <text value="Settings"/>
+            </properties>
+          </component>
+          <grid id="ef96b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="5" left="0" bottom="5" right="0"/>
+            <constraints/>
+            <properties>
+              <background color="-13077821"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="3ce81" class="javax.swing.JButton" binding="BtnLogout">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Arial" size="14" style="0"/>
+                  <horizontalAlignment value="0"/>
+                  <icon value="media/exit_24px.png"/>
+                  <text value="Logout"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </toolbar>
+    </children>
   </grid>
 </form>

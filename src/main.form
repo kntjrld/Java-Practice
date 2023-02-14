@@ -159,6 +159,7 @@
                 <properties>
                   <font name="Arial" size="14" style="0"/>
                   <foreground color="-16777216"/>
+                  <icon value="media/username_24px.png"/>
                   <text value="Username:"/>
                 </properties>
               </component>
@@ -169,6 +170,7 @@
                 <properties>
                   <font name="Arial" size="14" style="0"/>
                   <foreground color="-16777216"/>
+                  <icon value="media/keepass_24px.png"/>
                   <text value="Password:"/>
                 </properties>
               </component>
