@@ -11,7 +11,7 @@ public class Home extends JFrame{
     private JButton settingsButton;
 
     public static void main(String[] args) {
-        Home home = new Home();
+//        code here
     }
     public Home() {
         super();
@@ -20,12 +20,12 @@ public class Home extends JFrame{
         BtnLogout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
                 main m =  new main();
                 m.pack();
                 m.setVisible(true);
                 m.setResizable(false);
                 m.setLocationRelativeTo(null);
+                dispose();
             }
         });
     }

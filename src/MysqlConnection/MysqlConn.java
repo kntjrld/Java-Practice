@@ -19,7 +19,8 @@ public class MysqlConn {
         }
     }
 
-    public void getConnection() {
+    public Connection getConnection() throws SQLException {
+        return connection;
     }
 
     public void closeConnection() {
