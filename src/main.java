@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class main extends JFrame{
+public class Main extends JFrame{
     private JPanel PMain;
     private JPanel LeftPanel;
     private JPanel RightPanel;
@@ -26,14 +26,14 @@ public class main extends JFrame{
     private JPanel FooterPanel;
 
     public static void main(String[] args) {
-        main m =  new main();
+        Main m =  new Main();
         m.pack();
         m.setVisible(true);
         m.setResizable(false);
         m.setLocationRelativeTo(null);
     }
 
-    public main(){
+    public Main(){
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PMain);
@@ -48,11 +48,11 @@ public class main extends JFrame{
                 auth authentication = new auth(username,password);
                 try {
                     if(authenticate(authentication.setUsername(username), authentication.setPassword(password))){
-                        Home home = new Home();
-                        home.pack();
-                        home.setVisible(true);
-                        home.setResizable(false);
-                        home.setLocationRelativeTo(null);
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.pack();
+                        dashboard.setVisible(true);
+                        dashboard.setResizable(false);
+                        dashboard.setLocationRelativeTo(null);
                         dispose();
                     }else{
                         JOptionPane.showMessageDialog(null,

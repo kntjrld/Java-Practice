@@ -62,7 +62,7 @@ public class Register extends JFrame{
         BtnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                main m =  new main();
+                Main m =  new Main();
                 m.pack();
                 m.setVisible(true);
                 m.setResizable(false);

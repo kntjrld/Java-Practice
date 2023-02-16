@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Main">
   <grid id="27dc6" binding="PMain" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="14" y="24" width="748" height="528"/>
