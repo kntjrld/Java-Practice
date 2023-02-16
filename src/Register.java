@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Register extends JFrame{
@@ -43,10 +44,6 @@ public class Register extends JFrame{
                     try {
                         auth authentication = new auth(username,password);
                         saveDB(authentication.getUsername(), authentication.getPassword());
-                        JOptionPane.showMessageDialog(null,
-                                "Success registration",
-                                "System Message",
-                                JOptionPane.ERROR_MESSAGE);
                     } catch (SQLException ex) {
                         JOptionPane.showMessageDialog(null,
                                 "Something went wrong",
@@ -77,17 +74,38 @@ public class Register extends JFrame{
     public void saveDB(String username, String password) throws SQLException {
         auth authentication = new auth(username,password);
         MysqlConn conn = new MysqlConn();
-        String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-        PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
+        // Check if username is unique
+        String check = "SELECT COUNT(*) as count FROM users WHERE username = ?";
+        PreparedStatement stmt_check = conn.getConnection().prepareStatement(check);
+        stmt_check.setString(1, authentication.getUsername());
+        ResultSet rs = stmt_check.executeQuery();
+        // Process the result
+        if (rs.next()) {
+            int count = rs.getInt("count");
+            if(count > 0){
+                JOptionPane.showMessageDialog(null,
+                        "Username is not available",
+                        "Error Message",
+                        JOptionPane.ERROR_MESSAGE);
+                conn.closeConnection();
+            }else{
+                String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+                PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
 
-        stmt.setString(1, authentication.getUsername());
-        stmt.setString(2, authentication.getPassword());
+                stmt.setString(1, authentication.getUsername());
+                stmt.setString(2, authentication.getPassword());
 
-        int rowsInserted = stmt.executeUpdate();
+                int rowsInserted = stmt.executeUpdate();
 
-        if (rowsInserted > 0) {
-            System.out.println("A new user was inserted successfully!");
-            conn.closeConnection();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null,
+                            "Success registration",
+                            "System Message",
+                            JOptionPane.ERROR_MESSAGE);
+                    System.out.println("A new user was inserted successfully!");
+                    conn.closeConnection();
+                }
+            }
         }
     }
 }
