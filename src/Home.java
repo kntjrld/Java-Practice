@@ -1,4 +1,4 @@
-import MysqlConnection.MysqlConn;
+import JDBConnnection.OracleConn;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,10 +27,11 @@ public class Home extends JFrame{
                 m.setVisible(true);
                 m.setResizable(false);
                 m.setLocationRelativeTo(null);
-
-//              Disconnect database
-                MysqlConn mysqlConn = new MysqlConn();
-                mysqlConn.closeConnection();
+//              Disconnect mysql database
+                //--MysqlConn mysqlConn = new MysqlConn();
+                //--mysqlConn.closeConnection();
+//              Disconnect oracle database
+                OracleConn.closeConnection();
                 dispose();
             }
         });

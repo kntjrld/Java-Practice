@@ -135,7 +135,7 @@
           <description value="" />
           <database-type value="ORACLE" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="18.0" />
           <driver-source value="EXTERNAL" />
           <driver-library value="C:\Users\ADMIN\Desktop\sqldeveloper-22.2.1.234.1810-x64\sqldeveloper\jdbc\lib\ojdbc8.jar" />
           <driver value="oracle.jdbc.driver.OracleDriver" />
@@ -144,8 +144,8 @@
           <port value="1521" />
           <database value="XE" />
           <type value="USER_PASSWORD" />
-          <user value="SYSDBA" />
-          <deprecated-pwd value="" />
+          <user value="SYSTEM" />
+          <deprecated-pwd value="YWRtaW4=" />
         </database>
         <properties>
           <auto-commit value="false" />

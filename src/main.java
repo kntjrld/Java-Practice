@@ -1,4 +1,4 @@
-import MysqlConnection.MysqlConn;
+import JDBConnnection.OracleConn;
 import auth.auth;
 
 import javax.swing.*;
@@ -37,12 +37,13 @@ public class main extends JFrame{
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PMain);
+
 //======> LoginBtn - for authentication
         LoginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = UName.getText();
-                String password = UPass.getText().toString();
+                String password = UPass.getText();
 
                 auth authentication = new auth(username,password);
                 try {
@@ -54,9 +55,6 @@ public class main extends JFrame{
                         home.setLocationRelativeTo(null);
                         dispose();
                     }else{
-                        MysqlConn mysqlConn = new MysqlConn();
-                        mysqlConn.closeConnection();
-
                         JOptionPane.showMessageDialog(null,
                                 "Invalid credentials",
                                 "Error Message",
@@ -83,8 +81,13 @@ public class main extends JFrame{
 
     public boolean authenticate(String username, String password) throws SQLException {
         auth authentication = new auth(username, password);
-        MysqlConn conn = new MysqlConn();
-        String sql = "SELECT COUNT(*) as count FROM users WHERE username = ? and password = ?";
+        //#MYSQL JDBC
+        //--MysqlConn conn = new MysqlConn();
+        //--String sql = "SELECT COUNT(*) as count FROM users WHERE username = ? and password = ?";
+        //#ORACLE JDBC
+        OracleConn conn = new OracleConn();
+        String sql = "SELECT COUNT(*) as count FROM SYS.users WHERE username = ? and password = ?";
+
         PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
 
         stmt.setString(1, authentication.getUsername());
@@ -101,7 +104,7 @@ public class main extends JFrame{
         // Close the resources
         rs.close();
         stmt.close();
-        conn.closeConnection();
+        OracleConn.closeConnection();
 
         return false;
     }

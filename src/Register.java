@@ -1,4 +1,4 @@
-import MysqlConnection.MysqlConn;
+import JDBConnnection.OracleConn;
 import auth.auth;
 
 import javax.swing.*;
@@ -73,9 +73,13 @@ public class Register extends JFrame{
     }
     public void saveDB(String username, String password) throws SQLException {
         auth authentication = new auth(username,password);
-        MysqlConn conn = new MysqlConn();
+        //#Mysql JDBC
+        //--MysqlConn conn = new MysqlConn();
+        //#ORACLE JDBC
+        OracleConn conn = new OracleConn();
+
         // Check if username is unique
-        String check = "SELECT COUNT(*) as count FROM users WHERE username = ?";
+        String check = "SELECT COUNT(*) as count FROM SYS.users WHERE username = ?";
         PreparedStatement stmt_check = conn.getConnection().prepareStatement(check);
         stmt_check.setString(1, authentication.getUsername());
         ResultSet rs = stmt_check.executeQuery();
@@ -87,9 +91,9 @@ public class Register extends JFrame{
                         "Username is not available",
                         "Error Message",
                         JOptionPane.ERROR_MESSAGE);
-                conn.closeConnection();
+                OracleConn.closeConnection();
             }else{
-                String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+                String sql = "INSERT INTO SYS.users (username, password) VALUES (?, ?)";
                 PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
 
                 stmt.setString(1, authentication.getUsername());
@@ -103,7 +107,7 @@ public class Register extends JFrame{
                             "System Message",
                             JOptionPane.ERROR_MESSAGE);
                     System.out.println("A new user was inserted successfully!");
-                    conn.closeConnection();
+                    OracleConn.closeConnection();
                 }
             }
         }
