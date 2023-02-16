@@ -54,6 +54,9 @@ public class main extends JFrame{
                         home.setLocationRelativeTo(null);
                         dispose();
                     }else{
+                        MysqlConn mysqlConn = new MysqlConn();
+                        mysqlConn.closeConnection();
+
                         JOptionPane.showMessageDialog(null,
                                 "Invalid credentials",
                                 "Error Message",
