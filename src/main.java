@@ -7,64 +7,55 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
-public class Main extends JFrame{
+public class Main extends JFrame {
     private JPanel PMain;
     private JPanel LeftPanel;
     private JPanel RightPanel;
     private JButton LoginBtn;
     private JTextField UName;
     private JPasswordField UPass;
-    private JLabel lbl_username;
-    private JLabel lbl_password;
     private JPanel BtnPanel;
     private JButton BtnRegister;
-    private JLabel LeftLabel2;
-    private JLabel LeftLabel3;
-    private JPanel LeftPanel2;
-    private JLabel copyright;
-    private JPanel FooterPanel;
+    private JLabel IconChecker;
 
-    public static void main(String[] args) {
-        Main m =  new Main();
-        m.pack();
-        m.setVisible(true);
-        m.setResizable(false);
-        m.setLocationRelativeTo(null);
-    }
-
-    public Main(){
+    public Main() {
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PMain);
+        //#set icon
+        ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/success.png")));
+        ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/retry.png")));
 
-//======> LoginBtn - for authentication
+        //# LoginBtn - for authentication
         LoginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = UName.getText();
                 String password = UPass.getText();
-
-                auth authentication = new auth(username,password);
+                auth authentication = new auth(username, password);
                 try {
-                    if(authenticate(authentication.setUsername(username), authentication.setPassword(password))){
+                    if (authenticate(authentication.setUsername(username), authentication.setPassword(password))) {
+                        IconChecker.setIcon(success);
                         Dashboard dashboard = new Dashboard();
                         dashboard.pack();
                         dashboard.setVisible(true);
                         dashboard.setResizable(false);
                         dashboard.setLocationRelativeTo(null);
                         dispose();
-                    }else{
+                    } else {
+                        IconChecker.setIcon(error);
                         JOptionPane.showMessageDialog(null,
-                                "Invalid credentials",
+                                "Invalid Credentials",
                                 "Error Message",
                                 JOptionPane.ERROR_MESSAGE);
+                        System.out.println("Invalid username or password...");
                     }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
-
         });
         BtnRegister.addActionListener(new ActionListener() {
             @Override
@@ -77,6 +68,14 @@ public class Main extends JFrame{
                 dispose();
             }
         });
+    }
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.pack();
+        m.setVisible(true);
+        m.setResizable(false);
+        m.setLocationRelativeTo(null);
     }
 
     public boolean authenticate(String username, String password) throws SQLException {
