@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Dashboard extends JFrame{
     private JButton BtnDashboard;
@@ -86,7 +87,12 @@ public class Dashboard extends JFrame{
         recordsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Records records = new Records();
+                Records records = null;
+                try {
+                    records = new Records();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 records.pack();
                 records.setVisible(true);
                 records.setResizable(false);

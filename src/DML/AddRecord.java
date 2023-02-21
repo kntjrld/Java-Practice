@@ -1,22 +1,20 @@
 package DML;
 
 
-import java.util.Date;
-
 public class AddRecord {
     private String name;
     private String address;
-    private Date birthday;
+    private String email;
     private int age;
 
     private String status;
 
-    public AddRecord(String name, String address, Date birthday, int age, String status) {
-        this.name = name;
-        this.address = address;
-        this.birthday = birthday;
-        this.age = age;
-        this.status = status;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -35,20 +33,12 @@ public class AddRecord {
         this.address = address;
     }
 
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getStatus() {
