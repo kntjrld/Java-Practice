@@ -32,7 +32,7 @@
               <font name="Arial" size="12" style="0"/>
               <foreground color="-13077821"/>
               <horizontalAlignment value="0"/>
-              <icon value="media/graph.png"/>
+              <icon value="icons/graph.png"/>
               <requestFocusEnabled value="true"/>
               <text value="Dashboard"/>
               <verticalAlignment value="0"/>
@@ -44,7 +44,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/record.png"/>
+              <icon value="icons/record.png"/>
               <text value="Records"/>
               <visible value="true"/>
             </properties>
@@ -55,7 +55,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/graph_report.png"/>
+              <icon value="icons/graph_report.png"/>
               <text value="Reports"/>
             </properties>
           </component>
@@ -65,7 +65,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/setting.png"/>
+              <icon value="icons/setting.png"/>
               <text value="Settings"/>
             </properties>
           </component>
@@ -86,7 +86,7 @@
                   <font name="Arial" size="12" style="0"/>
                   <foreground color="-16777216"/>
                   <horizontalAlignment value="0"/>
-                  <icon value="media/exit.png"/>
+                  <icon value="icons/exit.png"/>
                   <text value="Logout"/>
                 </properties>
               </component>

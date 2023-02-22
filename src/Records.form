@@ -31,7 +31,7 @@
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
               <horizontalAlignment value="0"/>
-              <icon value="media/graph.png"/>
+              <icon value="icons/graph.png"/>
               <requestFocusEnabled value="true"/>
               <text value="Dashboard"/>
               <verticalAlignment value="0"/>
@@ -43,7 +43,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-13077821"/>
-              <icon value="media/record.png"/>
+              <icon value="icons/record.png"/>
               <text value="Records"/>
               <visible value="true"/>
             </properties>
@@ -54,7 +54,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/graph_report.png"/>
+              <icon value="icons/graph_report.png"/>
               <text value="Reports"/>
             </properties>
           </component>
@@ -64,7 +64,7 @@
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/setting.png"/>
+              <icon value="icons/setting.png"/>
               <text value="Settings"/>
             </properties>
           </component>
@@ -85,7 +85,7 @@
                   <font name="Arial" size="12" style="0"/>
                   <foreground color="-16777216"/>
                   <horizontalAlignment value="0"/>
-                  <icon value="media/exit.png"/>
+                  <icon value="icons/exit.png"/>
                   <text value="Logout"/>
                 </properties>
               </component>
@@ -100,7 +100,7 @@
           </grid>
         </children>
       </toolbar>
-      <grid id="eb2e4" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="eb2e4" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
@@ -110,38 +110,16 @@
         <children>
           <component id="53dc6" class="javax.swing.JButton" binding="AddBtn">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-1"/>
               <font name="Arial" size="12" style="0"/>
               <foreground color="-16777216"/>
-              <icon value="media/add.png"/>
+              <icon value="icons/add.png"/>
               <text value="Add"/>
             </properties>
           </component>
-          <grid id="e2d97" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="b09ce" class="javax.swing.JButton" binding="EditBtn">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial" size="12" style="0"/>
-                  <foreground color="-16777216"/>
-                  <icon value="media/edit.png"/>
-                  <text value="Edit"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
           <vspacer id="3b329">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
@@ -151,9 +129,43 @@
               </grid>
             </constraints>
           </vspacer>
+          <component id="18127" class="javax.swing.JButton" binding="btnDelete">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font name="Arial" size="12" style="0"/>
+              <foreground color="-16777216"/>
+              <icon value="icons/delete.png"/>
+              <text value="Delete"/>
+            </properties>
+          </component>
+          <grid id="ea0d5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="674bc" class="javax.swing.JButton" binding="EditBtn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Arial" size="12" style="0"/>
+                  <foreground color="-16777216"/>
+                  <icon value="icons/edit.png"/>
+                  <text value="Edit"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
-      <grid id="ce146" layout-manager="GridLayoutManager" row-count="1" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="ce146" layout-manager="GridLayoutManager" row-count="1" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
@@ -244,7 +256,7 @@
           </vspacer>
           <component id="153bd" class="javax.swing.JComboBox" binding="ValStatus">
             <constraints>
-              <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="200" height="-1"/>
                 <preferred-size width="200" height="-1"/>
                 <maximum-size width="200" height="-1"/>
@@ -259,6 +271,28 @@
             <properties/>
             <border type="none"/>
             <children/>
+          </grid>
+          <grid id="7cff1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="-1"/>
+                <preferred-size width="50" height="-1"/>
+                <maximum-size width="50" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="86d2a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Status"/>
+                </properties>
+              </component>
+            </children>
           </grid>
         </children>
       </grid>
@@ -453,12 +487,17 @@
         <constraints>
           <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Arial" size="12" style="0"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="76983" class="javax.swing.JTable" binding="tbl">
             <constraints/>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+              <opaque value="true"/>
+            </properties>
           </component>
         </children>
       </scrollpane>

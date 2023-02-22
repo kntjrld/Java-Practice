@@ -9,8 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class Register extends JFrame{
+public class Register extends JFrame {
 
+    ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/success.png")));
+    ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/retry.png")));
     private JPanel LeftPanel;
     private JPanel RightPanel;
     private JTextField txtUsername;
@@ -21,13 +23,8 @@ public class Register extends JFrame{
     private JPanel MainPanel;
     private JPasswordField txtRPassword;
     private JLabel IconMessage;
-    ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/success.png")));
-    ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/retry.png")));
 
-    public static void main(String[] args) {
-//        code here
-    }
-    public Register(){
+    public Register() {
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(MainPanel);
@@ -35,11 +32,11 @@ public class Register extends JFrame{
         RegisterBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(txtPassword.getText().toString().equals(txtRPassword.getText().toString())){
+                if (txtPassword.getText().toString().equals(txtRPassword.getText().toString())) {
                     String username = txtUsername.getText();
                     String password = txtPassword.getText().toString();
                     try {
-                        auth authentication = new auth(username,password);
+                        auth authentication = new auth(username, password);
                         saveDB(authentication.getUsername(), authentication.getPassword());
                     } catch (SQLException ex) {
                         IconMessage.setIcon(error);
@@ -49,7 +46,7 @@ public class Register extends JFrame{
                                 JOptionPane.ERROR_MESSAGE);
                         throw new RuntimeException(ex);
                     }
-                }else{
+                } else {
                     IconMessage.setIcon(error);
                     txtPassword.setText("");
                     txtRPassword.setText("");
@@ -63,7 +60,7 @@ public class Register extends JFrame{
         BtnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main m =  new Main();
+                Main m = new Main();
                 m.pack();
                 m.setVisible(true);
                 m.setResizable(false);
@@ -72,8 +69,13 @@ public class Register extends JFrame{
             }
         });
     }
+
+    public static void main(String[] args) {
+//        code here
+    }
+
     public void saveDB(String username, String password) throws SQLException {
-        auth authentication = new auth(username,password);
+        auth authentication = new auth(username, password);
         //#Mysql JDBC
         //--MysqlConn conn = new MysqlConn();
         //#ORACLE JDBC
@@ -87,14 +89,14 @@ public class Register extends JFrame{
         // Process the result
         if (rs.next()) {
             int count = rs.getInt("count");
-            if(count > 0){
+            if (count > 0) {
                 txtUsername.setText("");
                 JOptionPane.showMessageDialog(null,
                         "Username is not available",
                         "Error Message",
                         JOptionPane.ERROR_MESSAGE);
                 OracleConn.closeConnection();
-            }else{
+            } else {
                 String sql = "INSERT INTO SYS.users (username, password) VALUES (?, ?)";
                 PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
 

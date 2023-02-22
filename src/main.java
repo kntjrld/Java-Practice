@@ -25,8 +25,8 @@ public class Main extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PMain);
         //#set icon
-        ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/success.png")));
-        ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("media/retry.png")));
+        ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/success.png")));
+        ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/retry.png")));
 
         //# LoginBtn - for authentication
         LoginBtn.addActionListener(new ActionListener() {

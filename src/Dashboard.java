@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-public class Dashboard extends JFrame{
+public class Dashboard extends JFrame {
     private JButton BtnDashboard;
     private JButton recordsButton;
     private JButton reportsButton;
@@ -21,6 +21,7 @@ public class Dashboard extends JFrame{
     private JButton BtnLogout;
     private JPanel JPChart;
     private JPanel MainJPanel;
+
     public Dashboard() {
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,7 +72,7 @@ public class Dashboard extends JFrame{
         BtnLogout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main m =  new Main();
+                Main m = new Main();
                 m.pack();
                 m.setVisible(true);
                 m.setResizable(false);
