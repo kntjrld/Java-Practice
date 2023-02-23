@@ -100,7 +100,7 @@
           </grid>
         </children>
       </toolbar>
-      <grid id="eb2e4" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="eb2e4" layout-manager="GridLayoutManager" row-count="1" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
@@ -131,7 +131,7 @@
           </vspacer>
           <component id="18127" class="javax.swing.JButton" binding="btnDelete">
             <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-1"/>
@@ -163,6 +163,31 @@
               </component>
             </children>
           </grid>
+          <component id="500e8" class="javax.swing.JButton" binding="btnClear">
+            <constraints>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font name="Arial" size="12" style="0"/>
+              <foreground color="-16777216"/>
+              <icon value="icons/erase.png"/>
+              <text value="Clear"/>
+            </properties>
+          </component>
+          <component id="6a7e7" class="javax.swing.JButton" binding="BtnSave">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font name="Arial" size="12" style="0"/>
+              <foreground color="-16777216"/>
+              <icon value="icons/edit.png"/>
+              <text value="Save"/>
+              <visible value="false"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="ce146" layout-manager="GridLayoutManager" row-count="1" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

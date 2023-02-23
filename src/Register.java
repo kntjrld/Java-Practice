@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 public class Register extends JFrame {
-
     ImageIcon success = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/success.png")));
     ImageIcon error = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons/retry.png")));
     private JPanel LeftPanel;

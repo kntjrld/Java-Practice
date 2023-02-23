@@ -6,8 +6,16 @@ public class AddRecord {
     private String address;
     private String email;
     private int age;
-
+    private int id;
     private String status;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -33,12 +41,12 @@ public class AddRecord {
         this.address = address;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getStatus() {
