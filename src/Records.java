@@ -320,6 +320,7 @@ public class Records extends JFrame {
         ValStatus.setSelectedIndex(0);
         datePicker.getModel().setSelected(false);
         EditBtn.setText("Edit");
+        btnClear.setText("Clear");
         //#Button states
         AddBtn.setEnabled(true);
         tbl.setEnabled(true);

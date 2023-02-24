@@ -84,37 +84,47 @@ public class Register extends JFrame {
         String check = "SELECT COUNT(*) as count FROM SYS.users WHERE username = ?";
         PreparedStatement stmt_check = conn.getConnection().prepareStatement(check);
         stmt_check.setString(1, authentication.getUsername());
-        ResultSet rs = stmt_check.executeQuery();
-        // Process the result
-        if (rs.next()) {
-            int count = rs.getInt("count");
-            if (count > 0) {
-                txtUsername.setText("");
-                JOptionPane.showMessageDialog(null,
-                        "Username is not available",
-                        "Error Message",
-                        JOptionPane.ERROR_MESSAGE);
-                OracleConn.closeConnection();
-            } else {
-                String sql = "INSERT INTO SYS.users (username, password) VALUES (?, ?)";
-                PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
 
-                stmt.setString(1, authentication.getUsername());
-                stmt.setString(2, authentication.getPassword());
-
-                int rowsInserted = stmt.executeUpdate();
-
-                if (rowsInserted > 0) {
-                    IconMessage.setIcon(success);
+        if(username.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null,
+                    "Fill all fields",
+                    "System Message",
+                    JOptionPane.ERROR_MESSAGE);
+            System.out.println("ERROR: fill all fields");
+            OracleConn.closeConnection();
+        }else{
+            ResultSet rs = stmt_check.executeQuery();
+            // Process the result
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                if (count > 0) {
                     txtUsername.setText("");
-                    txtPassword.setText("");
-                    txtRPassword.setText("");
                     JOptionPane.showMessageDialog(null,
-                            "Success registration",
-                            "System Message",
+                            "Username is not available",
+                            "Error Message",
                             JOptionPane.ERROR_MESSAGE);
-                    System.out.println("A new user was inserted successfully!");
                     OracleConn.closeConnection();
+                } else {
+                    String sql = "INSERT INTO SYS.users (username, password) VALUES (?, ?)";
+                    PreparedStatement stmt = conn.getConnection().prepareStatement(sql);
+
+                    stmt.setString(1, authentication.getUsername());
+                    stmt.setString(2, authentication.getPassword());
+
+                    int rowsInserted = stmt.executeUpdate();
+
+                    if (rowsInserted > 0) {
+                        IconMessage.setIcon(success);
+                        txtUsername.setText("");
+                        txtPassword.setText("");
+                        txtRPassword.setText("");
+                        JOptionPane.showMessageDialog(null,
+                                "Success registration",
+                                "System Message",
+                                JOptionPane.ERROR_MESSAGE);
+                        System.out.println("A new user was inserted successfully!");
+                        OracleConn.closeConnection();
+                    }
                 }
             }
         }
